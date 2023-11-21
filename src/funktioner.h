@@ -36,16 +36,20 @@ void printVehicles(vregister* reg);
 void printVehicle(vregister* reg, int pos);
 
 /*
-    Replaces register with register from file
+    Replaces register with register from file, returns a bool indicating success/failure
 */
-void laddaRegister(vregister* reg, FILE* file);
+bool loadRegister(vregister* reg, FILE* file);
 
 /*
-    Saves register in a txt format in the given file
+    Saves register in a txt format in the given file, returns a bool indicating success/failure
 */
-void sparaRegister(vregister* reg, FILE* file);
+bool saveRegister(vregister* reg, FILE* file);
 
-
+/*
+    Checks if the given filename exists, if so, it returns the file. If not, it returns a
+    NULL pointer
+*/
+FILE* findFile(char* filnamn);
 
 
 
