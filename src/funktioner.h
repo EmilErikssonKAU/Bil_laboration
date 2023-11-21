@@ -10,10 +10,25 @@
 #define NAME_LENGTH 20
 
 /*
+    Adds vehicle to the vehicleArr[] in specified register if there is room
+*/
+void addVehicle(vregister* reg);
 
+/*
+    Removes vehicle on position pos from the vehicleArr[], also reshuffles the array
+    so that no gaps in the array exists
+*/
+void removeVehicle(vregister* reg, int pos);
 
+/*
+    Prints out the menu of actions
 */
 void printMeny();
+
+/*
+
+*/
+void print
 
 
 
