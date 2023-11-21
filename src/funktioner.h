@@ -26,10 +26,14 @@ void removeVehicle(vregister* reg, int pos);
 void printMenu();
 
 /*
-
+    Prints out information about all vehicles in the specified register
 */
-void print
+void printVehicles(vregister* reg);
 
+/*
+    Prints out information about vehicle at position pos in specified register
+*/
+void printVehicle(vregister* reg, int pos);
 
 
 
