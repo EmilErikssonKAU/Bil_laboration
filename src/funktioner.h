@@ -23,7 +23,7 @@ void removeVehicle(vregister* reg, int pos);
 /*
     Prints out the menu of actions
 */
-void printMeny();
+void printMenu();
 
 /*
 
