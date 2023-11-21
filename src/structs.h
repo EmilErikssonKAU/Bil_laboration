@@ -1,3 +1,6 @@
+#ifndef STRUCTS_H
+#define STRUCTS_H
+
 typedef struct vregister{
     vehicles vehicleArr [ENTRIES_LENGTH];
 }vregister;
@@ -13,3 +16,5 @@ typedef struct person{
     int age;
     char name [NAME_LENGTH];
 }person;
+
+#endif

@@ -9,4 +9,15 @@
 #define ENTRIES_LENGTH 10
 #define NAME_LENGTH 20
 
+/*
+
+
+*/
+void printMeny();
+
+
+
+
+
+
 #endif

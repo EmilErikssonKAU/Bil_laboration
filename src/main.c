@@ -1,3 +1,7 @@
-int main(){    
+#include "funktioner.h"
+#include "structs.h"
 
+int main(){    
+    vregister aktivtRegister;
+    
 }
