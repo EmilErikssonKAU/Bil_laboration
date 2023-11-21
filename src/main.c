@@ -33,7 +33,38 @@ int main(){
         printf("Your input did not match an alternative, you have recieved an empty register!");
     }
 
+    //main loop
+    int input;
+    char c;
+
     while(true){
         printmeny();
+        if(!scanf("%d", &input)){
+            while ((c = getchar()) != '\n')
+            ;
+            printf("Not an integer, try again!\n");
+            continue;
+        }
+
+        switch(input){
+
+            case 0:
+                break;
+
+            case 1:
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+            
+            case 4:
+                break;
+            
+            case 5:
+                break;
+        }
     }
 }
