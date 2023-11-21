@@ -35,6 +35,16 @@ void printVehicles(vregister* reg);
 */
 void printVehicle(vregister* reg, int pos);
 
+/*
+    Replaces register with register from file
+*/
+void laddaRegister(vregister* reg, FILE* file);
+
+/*
+    Saves register in a txt format in the given file
+*/
+void sparaRegister(vregister* reg, FILE* file);
+
 
 
 
