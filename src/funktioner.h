@@ -6,7 +6,7 @@
 #include <math.h>
 #include <stdbool.h>
 
-#define ENTRIES_LENGTH
-#define NAME_LENGTH
+#define ENTRIES_LENGTH 10
+#define NAME_LENGTH 20
 
 #endif
