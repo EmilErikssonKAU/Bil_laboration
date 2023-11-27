@@ -16,5 +16,6 @@ int checkLength(vregister* vreg){
 
 
 void addVehicle(vregister* vreg){
-    int index = checkLength(vreg) + 1;
+    int index = checkLength(vreg);
+    vreg -> vehicleArr + index = 
 }

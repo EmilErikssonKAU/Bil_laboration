@@ -1,3 +1,6 @@
+#include "funktioner.h"
+#include "structs.h"
+
 void printMenu(){
     printf("1. Lägg till ett fordon.\n");
     printf("2. Ta bort ett fordon.\n");
@@ -5,4 +8,32 @@ void printMenu(){
     printf("4. Skriv ut information om fordon.\n");
     printf("5. Skriv ut hela fordonsregistret.\n");
     printf("0. Avsluta programmet.\n");
+}
+
+void printVehicle(vregister* reg, int pos){
+    if(((reg -> vehicleArr) + pos ) != NULL){
+        vehicles* vehi = reg -> vehicleArr + pos;
+
+        //Vehicle information
+        printf("VEHICLE INFORMATION:\n");
+        printf("Type: %s\n", vehi -> type);
+        printf("Brand: %s\n", vehi -> brand);
+        printf("Plate: %s\n", vehi -> plate);
+
+        //Owner information
+        printf("OWNER INFORMATION:\n");
+        printf("Name: %s\n", vehi ->owner->name);
+        printf("Age: %s\n", vehi ->owner->age);
+
+    }
+}
+
+void printVehicles(vregister* reg){
+    int i = 0;
+    while(((reg -> vehicleArr) + i) != NULL){
+        printf("%d:\n", i);
+        printVehicle(reg, i);
+        printf("\n");
+        i++;
+    }
 }

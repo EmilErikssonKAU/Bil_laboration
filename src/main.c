@@ -27,10 +27,10 @@ int main(){
             printf("No file with the given filename exists");
     }
     else if(svar == 'n'){
-        printf("You have recieved an empty register!n");
+        printf("You have recieved an empty register!\n");
     }
     else{
-        printf("Your input did not match an alternative, you have recieved an empty register!");
+        printf("Your input did not match an alternative, you have recieved an empty register!\n");
     }
 
     //main loop
