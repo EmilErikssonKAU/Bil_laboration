@@ -10,7 +10,8 @@ void printMenu(){
     printf("0. Avsluta programmet.\n");
 }
 
-void printVehicle(vregister* reg, int pos){
+
+void printVehicle(vregister* reg, int pos, bool ownerFlag){
     if(((reg -> vehicleArr) + pos ) != NULL){
         vehicles* vehi = reg -> vehicleArr + pos;
 
@@ -19,6 +20,10 @@ void printVehicle(vregister* reg, int pos){
         printf("Type: %s\n", vehi -> type);
         printf("Brand: %s\n", vehi -> brand);
         printf("Plate: %s\n", vehi -> plate);
+
+        //Test of owner info flag
+        if(ownerFlag == false)
+            return;
 
         //Owner information
         printf("OWNER INFORMATION:\n");
@@ -32,7 +37,7 @@ void printVehicles(vregister* reg){
     int i = 0;
     while(((reg -> vehicleArr) + i) != NULL){
         printf("%d:\n", i);
-        printVehicle(reg, i);
+        printVehicle(reg, i, false);
         printf("\n");
         i++;
     }

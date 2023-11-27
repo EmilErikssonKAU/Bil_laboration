@@ -32,8 +32,13 @@ void printVehicles(vregister* reg);
 
 /*
     Prints out information about vehicle at position pos in specified register
+    if ownerFlag == false 
+        then no owner info
+    if ownerFlag == true
+        then owner info
+
 */
-void printVehicle(vregister* reg, int pos);
+void printVehicle(vregister* reg, int pos, bool ownerFlag);
 
 /*
     Replaces register with register from file, returns a bool indicating success/failure
