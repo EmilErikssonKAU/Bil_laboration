@@ -61,6 +61,16 @@ FILE* findFile(char* filnamn);
 */
 void reOrder(vregister* reg);
 
+/*
+    Sorts the register by brand of the cars
+*/
+void sortBrand(vregister* reg);
+
+/*
+    Swaps two pointer locations in register
+*/
+void swap(vregister* reg, int pos_1, int pos_2)
+
 
 
 #endif

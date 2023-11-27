@@ -3,7 +3,7 @@
 
 int main(){
     vregister reg;
-
+    /*
     char svar;
     char* filnamn;
 
@@ -32,6 +32,7 @@ int main(){
     else{
         printf("Your input did not match an alternative, you have recieved an empty register!\n");
     }
+    */
 
     //main loop
     int input;
@@ -39,6 +40,7 @@ int main(){
 
     while(true){
         printmeny();
+        int pos;
         if(!scanf("%d", &input)){
             while ((c = getchar()) != '\n')
             ;
@@ -49,21 +51,34 @@ int main(){
         switch(input){
 
             case 0:
+                //save and exit
+                //saveRegister()
+                exit(1);
                 break;
 
             case 1:
+                //add vehicle
+                addVehicle(&reg);
                 break;
 
             case 2:
+                //remove vehicle
+                scanf("%d", &pos);
+                removeVehicle(&reg, pos);
                 break;
 
             case 3:
+                sortBrand(&reg);
                 break;
             
             case 4:
+                //print information about vehicle
+                scanf("%d", &pos);
+                printVehicle(&reg, pos, true);
                 break;
             
             case 5:
+                printVehicles(&reg);
                 break;
         }
     }
