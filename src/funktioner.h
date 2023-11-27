@@ -56,6 +56,11 @@ bool saveRegister(vregister* reg, FILE* file);
 */
 FILE* findFile(char* filnamn);
 
+/*
+    Reorders the register such that all Null pointers in the vehicleArray are placed at the end
+*/
+void reOrder(vregister* reg);
+
 
 
 #endif

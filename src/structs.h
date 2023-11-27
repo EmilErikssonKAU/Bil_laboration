@@ -18,5 +18,3 @@ typedef struct vregister{
 }vregister;
 
 #endif
-
-int * a[];

@@ -6,6 +6,32 @@
     first empty spot in the array
 */
 
+void swap(vregister* reg, int pos_1, int pos_2){
+    vehicles* temp = reg -> vehicleArr[pos_1];
+    reg -> vehicleArr[pos_1] = reg -> vehicleArr[pos_2];
+    reg -> vehicleArr[pos_2] = temp;
+
+}
+
+void shuffle(vregister* reg, int pos){
+    int i = 0;
+    while(pos + i < ENTRIES_LENGTH){
+        if(reg -> vehicleArr[pos+i] != NULL){
+            swap(reg, pos, pos+i);
+        }
+        ++i;
+    }
+
+}
+
+void reOrder(vregister* reg){
+    for(int i = 0; i < ENTRIES_LENGTH; i++){
+        if(reg -> vehicleArr[i] == NULL)
+            //nuvarande position är NULL pekare
+            shuffle(reg, i);
+    }
+}
+
 void addVehicle(vregister* reg){
     //Find first empty spot in register
     int i;
@@ -34,5 +60,17 @@ void addVehicle(vregister* reg){
     printf("How old is he/she?\n");
     fgets(stdin, NAME_LENGTH, perso -> age);
 
+}
 
+void removeVehicle(vregister* reg, int pos){
+    if(reg -> vehicleArr[pos] == NULL){
+        printf("No vehicle at that position!\n");
+        return;
+    }
+
+    free(reg -> vehicleArr[pos] -> owner);
+    free(reg -> vehicleArr[pos]);
+    reg -> vehicleArr[pos] = NULL;
+
+    reOrder(reg);
 }
