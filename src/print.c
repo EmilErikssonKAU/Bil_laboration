@@ -20,8 +20,10 @@ void printVehicle(vregister* reg, int pos, bool ownerFlag){
     printf("Type: %s\n", vehi -> type);
     printf("Brand: %s\n", vehi -> brand);
     printf("Plate: %s\n", vehi -> plate);
+    
     //Test of owner info flag
     if(ownerFlag == false) { return; }
+
     //Owner information
     printf("OWNER INFORMATION:\n");
     printf("Name: %s\n", vehi -> owner -> name);

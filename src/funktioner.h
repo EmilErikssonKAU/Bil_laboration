@@ -6,8 +6,12 @@
 #include <math.h>
 #include <stdbool.h>
 
+
+
 #define ENTRIES_LENGTH 10
 #define NAME_LENGTH 20
+
+#include "structs.h"
 
 /*
     Adds vehicle to the vehicleArr[] in specified register if there is room

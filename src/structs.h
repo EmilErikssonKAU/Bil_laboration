@@ -1,9 +1,13 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-typedef struct vregister{
-    vehicles vehicleArr [ENTRIES_LENGTH];
-}vregister;
+#include "funktioner.h"
+
+typedef struct person{
+    int age;
+    char name [NAME_LENGTH];
+}person;
+
 
 typedef struct vehicles{
     char type [NAME_LENGTH];
@@ -12,9 +16,8 @@ typedef struct vehicles{
     person* owner;
 }vehicles;
 
-typedef struct person{
-    int age;
-    char name [NAME_LENGTH];
-}person;
+typedef struct vregister{
+    vehicles vehicleArr [ENTRIES_LENGTH];
+}vregister;
 
 #endif

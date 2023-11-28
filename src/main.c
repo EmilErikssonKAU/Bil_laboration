@@ -1,9 +1,11 @@
 #include "funktioner.h"
 #include "structs.h"
+#include "fil.h"
 
 int main(){
     vregister reg;
 
+    /*
     char svar;
     char* filnamn;
 
@@ -32,13 +34,14 @@ int main(){
     else{
         printf("Your input did not match an alternative, you have recieved an empty register!\n");
     }
+    */
 
     //main loop
     int input;
     char c;
 
     while(true){
-        printmeny();
+        printMenu();
         if(!scanf("%d", &input)){
             while ((c = getchar()) != '\n')
             ;
