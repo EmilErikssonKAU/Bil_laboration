@@ -4,7 +4,10 @@
 
 int main(){
     vregister reg;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5aea5ea4f8ab3fc4a0bef51c3c00c50d2046fcc3
     /*
     char svar;
     char* filnamn;
@@ -41,7 +44,12 @@ int main(){
     char c;
 
     while(true){
+<<<<<<< HEAD
         printMenu();
+=======
+        printmeny();
+        int pos;
+>>>>>>> 5aea5ea4f8ab3fc4a0bef51c3c00c50d2046fcc3
         if(!scanf("%d", &input)){
             while ((c = getchar()) != '\n')
             ;
@@ -52,21 +60,34 @@ int main(){
         switch(input){
 
             case 0:
+                //save and exit
+                //saveRegister()
+                exit(1);
                 break;
 
             case 1:
+                //add vehicle
+                addVehicle(&reg);
                 break;
 
             case 2:
+                //remove vehicle
+                scanf("%d", &pos);
+                removeVehicle(&reg, pos);
                 break;
 
             case 3:
+                sortBrand(&reg);
                 break;
             
             case 4:
+                //print information about vehicle
+                scanf("%d", &pos);
+                printVehicle(&reg, pos, true);
                 break;
             
             case 5:
+                printVehicles(&reg);
                 break;
         }
     }
