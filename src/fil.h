@@ -5,7 +5,12 @@
 #include "funktioner.h"
 #include "structs.h"
 
-#define RELATIVE_PATH "vehicles/"
+#define RELATIVE_PATH "vehicles/register.txt"
+
+
+int saveToFile(vregister* list);
+
+int loadToRegister(vregister* list);
 
 
 #endif
