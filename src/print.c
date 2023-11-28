@@ -12,25 +12,20 @@ void printMenu(){
 
 
 void printVehicle(vregister* reg, int pos, bool ownerFlag){
-    if(((reg -> vehicleArr) + pos ) != NULL){
-        vehicles* vehi = reg -> vehicleArr + pos;
+    if(((reg -> vehicleArr) + pos ) == NULL){ return; }
 
-        //Vehicle information
-        printf("VEHICLE INFORMATION:\n");
-        printf("Type: %s\n", vehi -> type);
-        printf("Brand: %s\n", vehi -> brand);
-        printf("Plate: %s\n", vehi -> plate);
-
-        //Test of owner info flag
-        if(ownerFlag == false)
-            return;
-
-        //Owner information
-        printf("OWNER INFORMATION:\n");
-        printf("Name: %s\n", vehi ->owner->name);
-        printf("Age: %s\n", vehi ->owner->age);
-
-    }
+    vehicles* vehi = reg -> vehicleArr + pos;
+    //Vehicle information
+    printf("VEHICLE INFORMATION:\n");
+    printf("Type: %s\n", vehi -> type);
+    printf("Brand: %s\n", vehi -> brand);
+    printf("Plate: %s\n", vehi -> plate);
+    //Test of owner info flag
+    if(ownerFlag == false) { return; }
+    //Owner information
+    printf("OWNER INFORMATION:\n");
+    printf("Name: %s\n", vehi -> owner -> name);
+    printf("Age: %s\n", vehi -> owner -> age);
 }
 
 void printVehicles(vregister* reg){
