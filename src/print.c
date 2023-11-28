@@ -14,13 +14,13 @@ void printMenu(){
 void printVehicle(vregister* reg, int pos, bool ownerFlag){
     if(((reg -> vehicleArr) + pos ) == NULL){ return; }
 
-    vehicles* vehi = reg -> vehicleArr + pos;
+    vehicles* vehi = reg -> vehicleArr[pos];
     //Vehicle information
     printf("VEHICLE INFORMATION:\n");
     printf("Type: %s\n", vehi -> type);
     printf("Brand: %s\n", vehi -> brand);
     printf("Plate: %s\n", vehi -> plate);
-    
+
     //Test of owner info flag
     if(ownerFlag == false) { return; }
 

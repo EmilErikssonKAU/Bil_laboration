@@ -1,5 +1,6 @@
 #include "funktioner.h"
 #include "structs.h"
+#include <string.h>
 
 //Bubblesort algoritm
 void sortBrand(vregister* reg){

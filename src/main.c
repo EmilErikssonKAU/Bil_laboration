@@ -4,10 +4,6 @@
 
 int main(){
     vregister reg;
-<<<<<<< HEAD
-
-=======
->>>>>>> 5aea5ea4f8ab3fc4a0bef51c3c00c50d2046fcc3
     /*
     char svar;
     char* filnamn;
@@ -44,12 +40,9 @@ int main(){
     char c;
 
     while(true){
-<<<<<<< HEAD
         printMenu();
-=======
-        printmeny();
         int pos;
->>>>>>> 5aea5ea4f8ab3fc4a0bef51c3c00c50d2046fcc3
+
         if(!scanf("%d", &input)){
             while ((c = getchar()) != '\n')
             ;

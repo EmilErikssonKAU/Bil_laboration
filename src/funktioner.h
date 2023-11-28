@@ -73,7 +73,7 @@ void sortBrand(vregister* reg);
 /*
     Swaps two pointer locations in register
 */
-void swap(vregister* reg, int pos_1, int pos_2)
+void swap(vregister* reg, int pos_1, int pos_2);
 
 
 

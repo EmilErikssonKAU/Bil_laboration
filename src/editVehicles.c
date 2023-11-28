@@ -22,11 +22,6 @@ void shuffle(vregister* reg, int pos){
         ++i;
     }
 
-<<<<<<< HEAD
-void addVehicle(vregister* vreg){
-    int index = checkLength(vreg);
-    // vreg -> vehicleArr + index = 
-=======
 }
 
 void reOrder(vregister* reg){
@@ -51,19 +46,23 @@ void addVehicle(vregister* reg){
 
     //Get information through stdout about car
     printf("What type of vehicle do you want to register?\n");
-    fgets(stdin, NAME_LENGTH, vehi -> type);
+    fgets(vehi -> type, NAME_LENGTH, stdin);
 
     printf("What is the brand?\n");
-    fgets(stdin, NAME_LENGTH, vehi -> brand);
+    fgets(vehi -> brand, NAME_LENGTH, stdin);
 
     printf("What is the number plate?\n");
-    fgets(stdin, NAME_LENGTH, vehi -> plate);
+    fgets(vehi -> plate, NAME_LENGTH, stdin);
 
     printf("Who is the owner?\n");
-    fgets(stdin, NAME_LENGTH, perso -> name);
+    fgets(perso -> name, NAME_LENGTH, stdin);
 
+
+    // fgets cant put in interger, only strings
     printf("How old is he/she?\n");
-    fgets(stdin, NAME_LENGTH, perso -> age);
+    char temp[NAME_LENGTH];
+    fgets(temp, NAME_LENGTH, stdin);
+    perso -> age = atoi(temp);
 
 }
 
@@ -78,5 +77,4 @@ void removeVehicle(vregister* reg, int pos){
     reg -> vehicleArr[pos] = NULL;
 
     reOrder(reg);
->>>>>>> 5aea5ea4f8ab3fc4a0bef51c3c00c50d2046fcc3
 }
