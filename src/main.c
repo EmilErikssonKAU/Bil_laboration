@@ -1,6 +1,4 @@
-#include "funktioner.h"
-#include "structs.h"
-#include "fil.h"
+#include "../headers/include.h"
 
 int main(){
     vregister reg;
