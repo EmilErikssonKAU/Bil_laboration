@@ -37,5 +37,9 @@ void printVehicles(vregister* reg){
         printVehicle(reg, i, false);
         printf("\n");
         i++;
+
+        //Array printed
+        if(i > ENTRIES_LENGTH - 1)
+            return;
     }
 }

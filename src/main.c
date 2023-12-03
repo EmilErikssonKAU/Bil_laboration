@@ -1,10 +1,22 @@
 #include "../headers/include.h"
 
+void flushStdin() {
+    int c;
+    while ((c = getchar()) != '\n')
+    ;
+       // Keep reading characters until newline    
+}
+
 int main(){
 
     vregister reg;
 
-    loadToRegister(&reg);
+    //initiering av array i struct
+    for(int i=0; i < 10; i++){
+        reg.vehicleArr[i] = NULL;
+    }
+
+    //          loadToRegister(&reg);
 
     //main loop
     char input;
@@ -13,11 +25,16 @@ int main(){
         printMenu();
         int pos;
 
-        input = getchar();
+        if(!isdigit(input = getchar())){
+            if(input == '\n')
+                continue;
+            printf("Not an integer!\n");
+            flushStdin();
+            continue;
+        }
 
-        // Picks up the \n after ^
-        getchar();
-
+        flushStdin();
+    
         switch(input){
 
             case '0':
@@ -54,7 +71,7 @@ int main(){
                 break;
             
             default:
-                printf("Not an valid input");
+                printf("Not a valid input!\n");
                 break;
                 
         }

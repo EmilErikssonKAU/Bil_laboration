@@ -23,12 +23,12 @@ OBJFILES = $(patsubst $(DIR)/%.c, %.o, $(SRCFILES))
 # Skapar objektfiler
 %.o: $(DIR)/%.c
 	@echo "Kompilerar $<"
-	@$(CC) $(Flags) $< -o $(BUILD)/$@
+	$(CC) $(Flags) $< -o $(BUILD)/$@
 
 # Skapar den körbara filen
 build: $(OBJFILES)
 	@echo "Skapar $(NAME)"
-	@$(CC) $(addprefix $(BUILD)/,$^) -o $(NAME)
+	$(CC) $(addprefix $(BUILD)/,$^) -o $(NAME)
 	@echo "Klart!"
 
 # Rensar upp filer när de inte längre behövs

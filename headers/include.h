@@ -10,6 +10,7 @@
 #include <math.h>
 #include <stdbool.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "structs.h"
 #include "funktioner.h"
