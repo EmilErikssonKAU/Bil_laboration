@@ -30,6 +30,8 @@ int saveToFile(vregister* list) {
         fputs(intTemp, vFile);
         fputs(list -> vehicleArr[i] -> owner -> name, vFile);
         i++;
+        if(i > ENTRIES_LENGTH - 1)
+            break;
     }
 
 

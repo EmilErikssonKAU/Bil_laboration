@@ -16,7 +16,7 @@ int main(){
         reg.vehicleArr[i] = NULL;
     }
 
-    //          loadToRegister(&reg);
+    loadToRegister(&reg);
 
     //main loop
     char input;

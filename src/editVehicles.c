@@ -35,7 +35,7 @@ void addVehicle(vregister* reg){
     //Find first empty spot in register
     int i = 0;
     while(reg -> vehicleArr[i] != NULL) {
-        if(i > NAME_LENGTH -1 ){
+        if(i > ENTRIES_LENGTH -1 ){
             printf("Array is full!");
             return;
         }
