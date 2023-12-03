@@ -2,17 +2,18 @@
 #include "structs.h"
 
 void printMenu(){
-    printf("1. Lägg till ett fordon.\n");
-    printf("2. Ta bort ett fordon.\n");
-    printf("3. Sortering efter bilmärke.\n");
-    printf("4. Skriv ut information om fordon.\n");
-    printf("5. Skriv ut hela fordonsregistret.\n");
-    printf("0. Avsluta programmet.\n");
+    printf("1. Add Vehicle\n");
+    printf("2. Remove Vehicle\n");
+    printf("3. Sort by brand\n");
+    printf("4. Show Vehicle information\n");
+    printf("5. Show Registry\n");
+    printf("0. Quit\n");
+
 }
 
 
 void printVehicle(vregister* reg, int pos, bool ownerFlag){
-    if(((reg -> vehicleArr) + pos ) == NULL){ return; }
+    if((reg -> vehicleArr[pos] ) == NULL){ return; }
 
     vehicles* vehi = reg -> vehicleArr[pos];
     //Vehicle information
@@ -32,7 +33,7 @@ void printVehicle(vregister* reg, int pos, bool ownerFlag){
 
 void printVehicles(vregister* reg){
     int i = 0;
-    while(((reg -> vehicleArr) + i) != NULL){
+    while(reg -> vehicleArr[i] != NULL){
         printf("%d:\n", i);
         printVehicle(reg, i, false);
         printf("\n");

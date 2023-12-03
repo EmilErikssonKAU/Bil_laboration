@@ -10,6 +10,7 @@
 
 #define ENTRIES_LENGTH 10
 #define NAME_LENGTH 20
+#define INPUT_LENGTH 1
 
 #include "structs.h"
 
@@ -43,22 +44,6 @@ void printVehicles(vregister* reg);
 
 */
 void printVehicle(vregister* reg, int pos, bool ownerFlag);
-
-/*
-    Replaces register with register from file, returns a bool indicating success/failure
-*/
-bool loadRegister(vregister* reg, FILE* file);
-
-/*
-    Saves register in a txt format in the given file, returns a bool indicating success/failure
-*/
-bool saveRegister(vregister* reg, FILE* file);
-
-/*
-    Checks if the given filename exists, if so, it returns the file. If not, it returns a
-    NULL pointer
-*/
-FILE* findFile(char* filnamn);
 
 /*
     Reorders the register such that all Null pointers in the vehicleArray are placed at the end

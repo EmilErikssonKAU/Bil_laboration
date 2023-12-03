@@ -1,31 +1,33 @@
-# The compilator used
+# The kompilator used
 CC = gcc
 
-# Name of file
+# Namnet på filen
 NAME = Bil-Register
 
-# Sorce file dir
+# Källkodskatalog
 DIR = src
 
-# List of src and obj files
-# wildcard is used for * to work
+Flags = -c
+
+# Lista över källkodsfiler och objektfiler
+# wildcard används för att * ska fungera
 SRCFILES = $(wildcard $(DIR)/*.c)
-OBJFILES = $(wildcard *.o)
+OBJFILES = $(patsubst $(DIR)/%.c,%.o,$(SRCFILES))
 
-# Creates keywords so make does not this these name are files
-.PHONY: obj-build, build, clean
+# Skapar nyckelord så att make inte tror att dessa namn är filer
+.PHONY: build clean
 
-# "make build" runs both obj-build and final
-build: obj-build, final
+# Skapar objektfiler
+%.o: $(DIR)/%.c
+	@echo "Kompilerar $<"
+	@$(CC) $(Flags) $< -o $@
 
-# creates obj files
-obj-build: $(SRCS)
-	$(CC) -c $(SRCFILES)
+# Skapar den körbara filen
+build: $(OBJFILES)
+	@echo "Skapar $(NAME)"
+	@$(CC) $^ -o $(NAME)
+	@echo "Klart!"
 
-# creates the executable file
-final: $(OBJFILES)
-	$(CC) -o $(NAME) 
-
-# cleans up files when done
+# Rensar upp filer när de inte längre behövs
 clean:
 	rm -f $(OBJFILES) $(NAME)

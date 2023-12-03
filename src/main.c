@@ -4,84 +4,58 @@
 
 int main(){
     vregister reg;
-    /*
-    char svar;
-    char* filnamn;
 
-    printf("Do you want to load an old register? (y/n) ");
-    scanf("%c", &svar);
-
-    if(svar == 'y'){
-        printf("What is the filename of the register? ");
-        scanf("%s", filnamn);
-        FILE* f = findFile(filnamn);
-
-        if(f != NULL){
-            if(loadRegister(&reg, f)){
-                printf("The register was loaded successfully!");
-            }
-            else{
-                printf("The register was unable to be loaded, your register is empty");
-            }
-        }
-        else
-            printf("No file with the given filename exists");
-    }
-    else if(svar == 'n'){
-        printf("You have recieved an empty register!\n");
-    }
-    else{
-        printf("Your input did not match an alternative, you have recieved an empty register!\n");
-    }
-    */
+    loadToRegister(&reg);
 
     //main loop
-    int input;
-    char c;
+    char input;
 
     while(true){
         printMenu();
         int pos;
 
-        if(!scanf("%d", &input)){
-            while ((c = getchar()) != '\n')
-            ;
-            printf("Not an integer, try again!\n");
-            continue;
-        }
+        input = getchar();
+
+        // Picks up the \n after ^
+        getchar();
 
         switch(input){
 
-            case 0:
+            case '0':
                 //save and exit
-                //saveRegister()
+                saveToFile(&reg);
                 exit(1);
                 break;
 
-            case 1:
+            case '1':
                 //add vehicle
                 addVehicle(&reg);
                 break;
 
-            case 2:
+            case '2':
                 //remove vehicle
-                scanf("%d", &pos);
+                // scanf("%d", &pos);
                 removeVehicle(&reg, pos);
                 break;
 
-            case 3:
+            case '3':
                 sortBrand(&reg);
                 break;
             
-            case 4:
+            case '4':
                 //print information about vehicle
-                scanf("%d", &pos);
+                // scanf("%d", &pos);
                 printVehicle(&reg, pos, true);
                 break;
             
-            case 5:
+            case '5':
                 printVehicles(&reg);
                 break;
+            
+            default:
+                printf("Not an valid input");
+                break;
+                
         }
     }
 }

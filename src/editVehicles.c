@@ -34,35 +34,41 @@ void reOrder(vregister* reg){
 
 void addVehicle(vregister* reg){
     //Find first empty spot in register
-    int i;
-    while(reg -> vehicleArr + i != NULL)
-    ++i;
+    int i = 0;
+    while(reg -> vehicleArr[i] != NULL) { i++; }
+    // This loop does not end if all the spaces are filled up, need to fix this
 
-    vehicles* vehi = (vehicles *) malloc(sizeof(vehicles));
-    reg -> vehicleArr[i] = vehi;
 
-    person* perso = (person *) malloc(sizeof(person));
-    vehi -> owner = perso;
+    //Unsure what this does, need to look this up to explain it
+    reg -> vehicleArr[i] = (vehicles*)malloc(sizeof(vehicles));
+    vehicles* vehi = reg -> vehicleArr[i];
 
-    //Get information through stdout about car
+    vehi -> owner = (person *) malloc(sizeof(person));
+    person* perso = vehi -> owner;
+
+
+    //Get information through stdin about car
     printf("What type of vehicle do you want to register?\n");
     fgets(vehi -> type, NAME_LENGTH, stdin);
+    // getchar();
+    printf("%s", vehi -> type);
 
     printf("What is the brand?\n");
     fgets(vehi -> brand, NAME_LENGTH, stdin);
+    printf("%s", vehi -> brand);
 
     printf("What is the number plate?\n");
     fgets(vehi -> plate, NAME_LENGTH, stdin);
 
     printf("Who is the owner?\n");
-    fgets(perso -> name, NAME_LENGTH, stdin);
+    fgets(vehi -> owner -> name, NAME_LENGTH, stdin);
 
 
     // fgets cant put in interger, only strings
     printf("How old is he/she?\n");
     char temp[NAME_LENGTH];
     fgets(temp, NAME_LENGTH, stdin);
-    perso -> age = atoi(temp);
+    vehi -> owner -> age = atoi(temp);
 
 }
 
