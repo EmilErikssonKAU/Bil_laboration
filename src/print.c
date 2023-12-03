@@ -12,8 +12,14 @@ void printMenu(){
 
 
 void printVehicle(vregister* reg, int pos, bool ownerFlag){
-    if((reg -> vehicleArr[pos] ) == NULL){ return; }
-
+    if(pos > ENTRIES_LENGTH -1){
+        printf("WARNING: That position is out of bounds");
+        return;
+    }
+    if((reg -> vehicleArr[pos] ) == NULL){
+        printf("WARNING: No vehicle exists at that position!\n");
+        return; 
+    }
     vehicles* vehi = reg -> vehicleArr[pos];
     //Vehicle information
     printf("VEHICLE INFORMATION:\n");

@@ -20,15 +20,16 @@ int main(){
 
     //main loop
     char input;
+    char pos;
+    int pos_int;
 
     while(true){
         printMenu();
-        int pos;
 
         if(!isdigit(input = getchar())){
-            if(input == '\n')
-                continue;
             printf("Not an integer!\n");
+            if(input == '\n')               //stdin måste innehålla '\n' om flushStdin ska kallas
+                continue;
             flushStdin();
             continue;
         }
@@ -57,13 +58,23 @@ int main(){
                 break;
 
             case '3':
+                //sort vehicle array
                 sortBrand(&reg);
                 break;
             
             case '4':
+                printf("Position in the array: ");
                 //print information about vehicle
-                // scanf("%d", &pos);
-                printVehicle(&reg, pos, true);
+                if(!isdigit(pos = getchar())){
+                    printf("Not an integer!\n");
+                    if(pos == '\n')               //stdin måste innehålla '\n' om flushStdin ska kallas
+                        continue;
+                    flushStdin();
+                    continue;
+                }
+                flushStdin();
+                //Converts 
+                printVehicle(&reg, pos - '0', true);
                 break;
             
             case '5':
