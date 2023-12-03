@@ -1,6 +1,7 @@
 #include "../headers/include.h"
 
 int main(){
+    printf("1");
     vregister reg;
 
     loadToRegister(&reg);

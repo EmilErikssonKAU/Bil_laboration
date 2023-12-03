@@ -49,12 +49,9 @@ void addVehicle(vregister* reg){
     //Get information through stdin about car
     printf("What type of vehicle do you want to register?\n");
     fgets(vehi -> type, NAME_LENGTH, stdin);
-    // getchar();
-    printf("%s", vehi -> type);
 
     printf("What is the brand?\n");
     fgets(vehi -> brand, NAME_LENGTH, stdin);
-    printf("%s", vehi -> brand);
 
     printf("What is the number plate?\n");
     fgets(vehi -> plate, NAME_LENGTH, stdin);
