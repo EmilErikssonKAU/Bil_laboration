@@ -1,9 +1,9 @@
-## Vehicleregister
+# Vehicleregister
 A program implementing a vehicle registers of up to 10 vehicles and owners, the program allows the user to sort, search and print the contents of the register, as well as saving it to a file.
 
-## TO DO
+# TO DO
 
-# ESSENTIAL
+## ESSENTIAL
 
 - Checks for correct input, when assigning age to owner
 - Thorough debugging
@@ -11,13 +11,13 @@ A program implementing a vehicle registers of up to 10 vehicles and owners, the 
 - Update user interface
 - Rewrite code to more compact form
 
-# NON-ESSENTIAL
+## NON-ESSENTIAL
 
 - Commenting
 - Restructuring of file contents
 - Checking validity of vehicle numberplate
 
-# VERY-NON-ESSENTIAL
+## VERY-NON-ESSENTIAL
 
 - Allowing user to choose savefile
 - Allowing user to choose language
