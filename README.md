@@ -1,5 +1,5 @@
-## Bilregister
-Ett program som representerar ett fordonsregister, d.v.s. ett register över fordon och dess  ägare. Fordonsregistret har ett textbaserat gränssnitt.
+## Vehicleregister
+A program implementing a vehicle registers of up to 10 vehicles and owners, the program allows the user to sort, search and print the contents of the register, as well as saving it to a file.
 
 ## TO DO
 
