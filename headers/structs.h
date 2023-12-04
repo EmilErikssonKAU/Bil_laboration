@@ -1,7 +1,7 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-#include "funktioner.h"
+#include "include.h"
 
 typedef struct person{
     int age;

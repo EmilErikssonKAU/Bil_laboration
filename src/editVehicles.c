@@ -1,5 +1,4 @@
-#include "funktioner.h"
-#include "structs.h"
+#include "../headers/include.h"
 
 /*
     Every NULL pointer in the array is an empty spot, therefore the first NULL pointer is the

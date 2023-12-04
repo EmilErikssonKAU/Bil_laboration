@@ -1,5 +1,4 @@
-#include "funktioner.h"
-#include "structs.h"
+#include "../headers/include.h"
 
 void printMenu(){
     printf("1. Add Vehicle\n");
@@ -28,7 +27,7 @@ void printVehicle(vregister* reg, int pos, bool ownerFlag){
     //Owner information
     printf("OWNER INFORMATION:\n");
     printf("Name: %s\n", vehi -> owner -> name);
-    printf("Age: %s\n", vehi -> owner -> age);
+    printf("Age: %d\n", vehi -> owner -> age);
 }
 
 void printVehicles(vregister* reg){
