@@ -11,8 +11,6 @@ int createFile() {
 }
 
 int saveToFile(vregister* list) {
-
-    printf("1");
     FILE *vFile = fopen(RELATIVE_PATH, "w");
 
     if (vFile == NULL) { 
@@ -21,27 +19,19 @@ int saveToFile(vregister* list) {
         
         return -1; 
     } 
-    printf("1");
     char intTemp[NAME_LENGTH];
-    for (int i = 0; i < ENTRIES_LENGTH; i++) {
-
-        // IF the is nothing, the loop continues in case anything comes later
-        if (!(list -> vehicleArr[i])) { continue; }
-
+    int i = 0;
+    // No for loop because this can be scaleable, and because the condition works better here
+    while(list -> vehicleArr[i]) {
         fputs(list -> vehicleArr[i] -> type, vFile);
-        printf("1");
         fputs(list -> vehicleArr[i] -> plate, vFile);
-        printf("1");
         fputs(list -> vehicleArr[i] -> brand, vFile);
-        printf("1");
-        sprintf(intTemp, "%d", list -> vehicleArr[i] -> owner -> age);
-        printf("1");
+        sprintf(intTemp, "%d\n", list -> vehicleArr[i] -> owner -> age);
         fputs(intTemp, vFile);
-        printf("1");
         fputs(list -> vehicleArr[i] -> owner -> name, vFile);
-        printf("1");
-
+        i++;
     }
+
 
     fclose(vFile);
 
@@ -49,9 +39,9 @@ int saveToFile(vregister* list) {
 }
 
 int loadToRegister(vregister* list) {
-
+    printf("1");
     FILE *vFile = fopen(RELATIVE_PATH, "r");
-
+    printf("1");
     if (vFile == NULL) { 
 
         printf("File did not exist, creating a new register file\n");
@@ -60,26 +50,30 @@ int loadToRegister(vregister* list) {
 
         return -1; 
     } 
-
+    printf("1");
     char intTemp[NAME_LENGTH];
+    char typeTemp[NAME_LENGTH];
+    int i = 0;
+    while (fgets(typeTemp, NAME_LENGTH - 1, vFile)){
+        //Unsure what this does, need to look this up to explain it
+        list -> vehicleArr[i] = (vehicles*)malloc(sizeof(vehicles));
+        vehicles* vehi = list -> vehicleArr[i];
 
-    for (int i = 0; i < ENTRIES_LENGTH; i++) {
+        vehi -> owner = (person *) malloc(sizeof(person));
+        person* perso = vehi -> owner;
+        // Could also need to add -1 to NAME_LENGTH due to that the last place is an \n
         
-        while (fgets(list -> vehicleArr[i] -> type, NAME_LENGTH, vFile))
-        {
-            // you could need to increase the NAME_LENGTH varible to fit everything
-            // Could also need to add -1 to NAME_LENGTH due to that the last place is an \n
-            
-            // If type is emty, we need to start 'later', test and see if "" needs to be replaced with NULL
-            fgets(list -> vehicleArr[i] -> plate, NAME_LENGTH, vFile);
-            fgets(list -> vehicleArr[i] -> brand, NAME_LENGTH, vFile);
-            fgets(intTemp, NAME_LENGTH, vFile);
-            fgets(list -> vehicleArr[i] -> owner -> name, NAME_LENGTH, vFile);
+        strcpy(vehi -> type, typeTemp);
+        fgets(vehi -> plate, NAME_LENGTH - 1, vFile);
+        fgets(vehi -> brand, NAME_LENGTH  -1, vFile);
+        fgets(intTemp, NAME_LENGTH - 1, vFile);
+        perso -> age = atoi(intTemp);
+        fgets(perso -> name, NAME_LENGTH - 1, vFile);
+        
 
-            list -> vehicleArr[i] -> owner -> age = atoi(intTemp);
-        }
-        
+        i++;
     }
+        
 
     fclose(vFile);
 

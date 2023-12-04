@@ -3,6 +3,7 @@
 #include "fil.h"
 
 int main(){
+    printf("1");
     vregister reg;
 
     loadToRegister(&reg);
