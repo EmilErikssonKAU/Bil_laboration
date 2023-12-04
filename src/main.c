@@ -1,7 +1,7 @@
 #include "../headers/include.h"
 
 int main(){
-    printf("1");
+
     vregister reg;
 
     loadToRegister(&reg);
@@ -33,8 +33,10 @@ int main(){
 
             case '2':
                 //remove vehicle
-                // scanf("%d", &pos);
-                removeVehicle(&reg, pos);
+                pos = getchar();
+                getchar();
+                printf("%d", pos - 48);
+                removeVehicle(&reg, pos - 48);
                 break;
 
             case '3':

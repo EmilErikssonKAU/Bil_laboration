@@ -39,9 +39,9 @@ int saveToFile(vregister* list) {
 }
 
 int loadToRegister(vregister* list) {
-    printf("1");
+
     FILE *vFile = fopen(RELATIVE_PATH, "r");
-    printf("1");
+
     if (vFile == NULL) { 
 
         printf("File did not exist, creating a new register file\n");
@@ -50,7 +50,7 @@ int loadToRegister(vregister* list) {
 
         return -1; 
     } 
-    printf("1");
+
     char intTemp[NAME_LENGTH];
     char typeTemp[NAME_LENGTH];
     int i = 0;
