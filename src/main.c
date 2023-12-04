@@ -1,11 +1,5 @@
 #include "../headers/include.h"
 
-void flushStdin() {
-    int c;
-    while ((c = getchar()) != '\n')
-    ;
-       // Keep reading characters until newline    
-}
 
 int main(){
 
@@ -19,70 +13,54 @@ int main(){
     loadToRegister(&reg);
 
     //main loop
-    char input;
+    int input;
     char pos;
     int pos_int;
 
     while(true){
         printMenu();
 
-        if(!isdigit(input = getchar())){
-            printf("Not an integer!\n");
-            if(input == '\n')               //stdin måste innehålla '\n' om flushStdin ska kallas
-                continue;
-            flushStdin();
-            continue;
-        }
+        input =  getNum(0, MENU_OPTIONS); 
 
-        flushStdin();
+        printf("\n");
     
         switch(input){
 
-            case '0':
+            case 0:
                 //save and exit
                 saveToFile(&reg);
                 exit(1);
                 break;
 
-            case '1':
+            case 1:
                 //add vehicle
                 addVehicle(&reg);
                 break;
 
-            case '2':
+            case 2:
                 //remove vehicle
-                pos = getchar();
-                getchar();
-                printf("%d", pos - 48);
-                removeVehicle(&reg, pos - 48);
+                input =  getNum(0, ENTRIES_LENGTH - 1); 
+                removeVehicle(&reg, input);
                 break;
 
-            case '3':
+            case 3:
                 //sort vehicle array
                 sortBrand(&reg);
                 break;
             
-            case '4':
-                printf("Position in the array: ");
+            case 4:
                 //print information about vehicle
-                if(!isdigit(pos = getchar())){
-                    printf("Not an integer!\n");
-                    if(pos == '\n')               //stdin måste innehålla '\n' om flushStdin ska kallas
-                        continue;
-                    flushStdin();
-                    continue;
-                }
-                flushStdin();
+                input =  getNum(0, ENTRIES_LENGTH -1); 
                 //Converts 
-                printVehicle(&reg, pos - '0', true);
+                printVehicle(&reg, input, true);
                 break;
             
-            case '5':
+            case 5:
                 printVehicles(&reg);
                 break;
             
             default:
-                printf("Not a valid input!\n");
+                printf("WARNING: Not a valid input!\n");
                 break;
                 
         }

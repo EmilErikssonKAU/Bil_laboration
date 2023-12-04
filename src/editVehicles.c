@@ -37,7 +37,7 @@ void addVehicle(vregister* reg){
     while(reg -> vehicleArr[i] != NULL) {
         i++;
         if(i > ENTRIES_LENGTH -1 ){
-            printf("Array is full!");
+            printf("WARNING: Array is full!\n");
             return;
         }
     }

@@ -49,6 +49,9 @@ void sortBrand(vregister* reg);
 */
 void swap(vregister* reg, int pos_1, int pos_2);
 
+int getNum(int lowest, int highest);
+
+void flushStdin();
 
 
 

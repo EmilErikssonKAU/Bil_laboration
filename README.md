@@ -5,6 +5,7 @@ A program implementing a vehicle registers of up to 10 vehicles and owners, the 
 
 ## ESSENTIAL
 
+- Handling user entering more than one number
 - Checks for correct input, when assigning age to owner
 - Thorough debugging
 - Check for memory leaks with valgrind
