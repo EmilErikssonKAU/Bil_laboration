@@ -1,25 +1,17 @@
-# The kompilator used
 CC = gcc
 
-# Namnet på filen
-NAME = Bil-Register
+NAME = program
 
-# Källkodskatalog
-DIR = src
-
-# Buildfolder
 BUILD = build
+SRC = src
 
-Flags = -c
-
-# Lista över källkodsfiler och objektfiler
-# wildcard används för att * ska fungera
-SRCFILES = $(wildcard $(DIR)/*.c)
-OBJFILES = $(patsubst $(DIR)/%.c, %.o, $(SRCFILES))
+SRCFILES = $(wildcard $(SRC)/*.c)
+OBJFILES = $(patsubst $(SRC)/%.c, $(BUILD)/%.o, $(SRCFILES))
 
 # Skapar nyckelord så att make inte tror att dessa namn är filer
-.PHONY: build clean
+.PHONY: build dirs clean
 
+<<<<<<< HEAD
 # Skapar objektfiler
 %.o: $(DIR)/%.c
 	@echo "Kompilerar $<"
@@ -29,8 +21,20 @@ OBJFILES = $(patsubst $(DIR)/%.c, %.o, $(SRCFILES))
 build: $(OBJFILES)
 	@echo "Skapar $(NAME)"
 	$(CC) $(addprefix $(BUILD)/,$^) -o $(NAME)
+=======
+build: $(OBJFILES)
+	@echo "Skapar $(NAME)"
+	@$(CC) $^ -o $(NAME)
+>>>>>>> 364fc6c130f73e4d064b1ab605d907c78201cd64
 	@echo "Klart!"
+
+$(BUILD)/%.o: $(SRC)/%.c | dirs
+	@echo "Kompilerar $<"
+	@$(CC) -c -o $@ $<
+
+dirs: 
+	@mkdir -p $(BUILD)
 
 # Rensar upp filer när de inte längre behövs
 clean:
-	rm -f $(addprefix $(BUILD)/, $(OBJFILES)) $(NAME)
+	rm -f $(OBJFILES) $(NAME)
