@@ -1,3 +1,7 @@
+build/*
+Bil-Register
+
+
 # Prerequisites
 *.d
 
