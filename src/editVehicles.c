@@ -35,11 +35,11 @@ void addVehicle(vregister* reg){
     //Find first empty spot in register
     int i = 0;
     while(reg -> vehicleArr[i] != NULL) {
+        i++;
         if(i > ENTRIES_LENGTH -1 ){
             printf("Array is full!");
             return;
         }
-        i++;
     }
     // This loop does not end if all the spaces are filled up, need to fix this
 
