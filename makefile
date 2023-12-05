@@ -1,9 +1,11 @@
 CC = gcc
 
-NAME = program
+NAME = Bil-Register
 
 BUILD = build
 SRC = src
+
+FLAGS = -Wall
 
 SRCFILES = $(wildcard $(SRC)/*.c)
 OBJFILES = $(patsubst $(SRC)/%.c, $(BUILD)/%.o, $(SRCFILES))
@@ -13,7 +15,7 @@ OBJFILES = $(patsubst $(SRC)/%.c, $(BUILD)/%.o, $(SRCFILES))
 
 build: $(OBJFILES)
 	@echo "Skapar $(NAME)"
-	@$(CC) $^ -o $(NAME)
+	@$(CC) $(FLAGS) $^ -o $(NAME)
 	@echo "Klart!"
 
 $(BUILD)/%.o: $(SRC)/%.c | dirs
@@ -22,6 +24,9 @@ $(BUILD)/%.o: $(SRC)/%.c | dirs
 
 dirs: 
 	@mkdir -p $(BUILD)
+
+memCheck:
+	-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(NAME)
 
 # Rensar upp filer när de inte längre behövs
 clean:
