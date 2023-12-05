@@ -39,17 +39,19 @@ int saveToFile(vregister* list) {
     fclose(vFile);
 
 
-    for(int i = 0; i < ENTRIES_LENGTH; i++) {
+    for(int j = 0; j < ENTRIES_LENGTH; j++) {
+        if(list -> vehicleArr[i] == NULL)
+            continue;
 
-        if (list -> vehicleArr[i] -> owner) {
+        if (list -> vehicleArr[j] -> owner) {
 
-            free(list -> vehicleArr[i] -> owner);
+            free(list -> vehicleArr[j] -> owner);
 
         }
 
-        if (list -> vehicleArr[i]) {
+        if (list -> vehicleArr[j]) {
 
-            free(list -> vehicleArr[i]);
+            free(list -> vehicleArr[j]);
 
         }
 
