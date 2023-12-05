@@ -12,6 +12,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
+#include <unistd.h>
 
 #include "structs.h"
 #include "funktioner.h"

@@ -38,6 +38,7 @@ int addVehicle(vregister* reg){
         i++;
         if(i > ENTRIES_LENGTH -1 ){
             printf("WARNING: Array is full!\n");
+            usleep(200000);
             return -1;
         }
     }
@@ -50,30 +51,34 @@ int addVehicle(vregister* reg){
     vehi -> owner = (person *) malloc(sizeof(person));
     person* perso = vehi -> owner;
 
-
+    
     //Get information through stdin about car
     printf("What type of vehicle do you want to register?\n");
+    usleep(200000);
     fgets(vehi -> type, NAME_LENGTH, stdin);
 
     printf("What is the brand?\n");
+    usleep(200000);
     fgets(vehi -> brand, NAME_LENGTH, stdin);
 
     printf("What is the number plate?\n");
+    usleep(200000);
     fgets(vehi -> plate, NAME_LENGTH, stdin);
 
     printf("Who is the owner?\n");
+    usleep(200000);
     fgets(vehi -> owner -> name, NAME_LENGTH, stdin);
 
 
     // fgets cant put in interger, only strings
     printf("How old is he/she?\n");
+    usleep(200000);
     char temp[NAME_LENGTH];
     fgets(temp, NAME_LENGTH, stdin);
     vehi -> owner -> age = atoi(temp);
-
-    printf("%d", atoi(temp));
-
+    
     printf("\nIndex of your vehicle is %d\n", i);
+    usleep(200000);
 
     return 0;
 
@@ -82,6 +87,7 @@ int addVehicle(vregister* reg){
 void removeVehicle(vregister* reg, int pos){
     if(reg -> vehicleArr[pos] == NULL){
         printf("No vehicle at that position!\n");
+        usleep(200000);
         return;
     }
 
@@ -91,4 +97,5 @@ void removeVehicle(vregister* reg, int pos){
     reOrder(reg);
 
     printf("Vehicle was successfully deleted!\n");
+    usleep(200000);
 }

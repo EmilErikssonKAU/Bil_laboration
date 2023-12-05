@@ -41,6 +41,7 @@ int main(){
                 //remove vehicle
                 input =  getNum(0, ENTRIES_LENGTH - 1); 
                 printf("\n");
+                 usleep(100000);
                 removeVehicle(&reg, input);
                 break;
 
@@ -54,6 +55,7 @@ int main(){
                 input =  getNum(0, ENTRIES_LENGTH -1); 
                 //Converts 
                 printf("\n");
+                 usleep(100000);
                 printVehicle(&reg, input, true);
                 break;
             
@@ -63,6 +65,7 @@ int main(){
             
             default:
                 printf("WARNING: Not a valid input!\n");
+                 usleep(100000);
                 break;
                 
         }
