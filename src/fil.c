@@ -23,7 +23,7 @@ int saveToFile(vregister* list) {
     char intTemp[NAME_LENGTH];
     int i = 0;
     // No for loop because this can be scaleable, and because the condition works better here
-    while(list -> vehicleArr[i]) {
+    while(list -> vehicleArr[i] != NULL) {
         fputs(list -> vehicleArr[i] -> type, vFile);
         fputs(list -> vehicleArr[i] -> plate, vFile);
         fputs(list -> vehicleArr[i] -> brand, vFile);

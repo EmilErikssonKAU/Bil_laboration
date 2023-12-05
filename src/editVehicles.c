@@ -74,7 +74,17 @@ int addVehicle(vregister* reg){
     printf("How old is he/she?\n");
     usleep(200000);
     char temp[NAME_LENGTH];
-    fgets(temp, NAME_LENGTH, stdin);
+
+    while(true){
+        fgets(temp, NAME_LENGTH, stdin);
+        if(!checkInt(temp, NAME_LENGTH)){
+                printf("WARNING: Faulty input!\n");
+                usleep(200000);
+                continue;
+        }
+        break;
+    }
+
     vehi -> owner -> age = atoi(temp);
     
     printf("\nIndex of your vehicle is %d\n", i);

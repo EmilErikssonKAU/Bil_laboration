@@ -12,7 +12,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
-#include <unistd.h>
+#include <unistd.h>         //For the LINUX edition of Vehicle Reg
 
 #include "structs.h"
 #include "funktioner.h"

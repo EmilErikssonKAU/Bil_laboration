@@ -53,6 +53,8 @@ int getNum(int lowest, int highest);
 
 void flushStdin();
 
+bool checkInt(char *str, int len);
+
 
 
 #endif

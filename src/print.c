@@ -44,12 +44,13 @@ void removeNL(char *str, int len){
 bool checkInt(char *str, int len){
     int i = 0;
     while(true){
-        if(i == '\0' || i == '\n'){
+        if(str[i] == '\0' || str[i] == '\n'){
             removeNL(str, len);
             return true;
         }
-        if(!isdigit(str + i))
+        if(!isdigit(str[i]))
             return false;
+        ++i;
     }  
 }
 
@@ -60,7 +61,7 @@ int getNum(int lowest, int highest){
 
     do{
         if(repeated){
-            printf("WARNING: number not in range!\n");
+            printf("WARNING: Number not in range!\n");
             usleep(200000);
         }
         printf("Enter a number between %d and %d: ", lowest, highest);
@@ -69,6 +70,7 @@ int getNum(int lowest, int highest){
         if(!checkInt(input, NAME_LENGTH)){
             printf("WARNING: Faulty input!\n");
             usleep(200000);
+            repeated = false;
             continue;
         }
         input_int = atoi(input); 

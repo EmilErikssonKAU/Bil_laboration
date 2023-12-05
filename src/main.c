@@ -29,6 +29,8 @@ int main(){
             case 0:
                 //save and exit
                 saveToFile(&reg);
+                printf("Your register has been saved! Thank you for using our vehicle register!\n");
+                usleep(200000);
                 exit(1);
                 break;
 
@@ -65,7 +67,7 @@ int main(){
             
             default:
                 printf("WARNING: Not a valid input!\n");
-                 usleep(100000);
+                usleep(100000);
                 break;
                 
         }
