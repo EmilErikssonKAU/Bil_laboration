@@ -40,6 +40,7 @@ int main(){
             case 2:
                 //remove vehicle
                 input =  getNum(0, ENTRIES_LENGTH - 1); 
+                printf("\n");
                 removeVehicle(&reg, input);
                 break;
 
@@ -52,6 +53,7 @@ int main(){
                 //print information about vehicle
                 input =  getNum(0, ENTRIES_LENGTH -1); 
                 //Converts 
+                printf("\n");
                 printVehicle(&reg, input, true);
                 break;
             
