@@ -5,6 +5,8 @@
 #define NAME_LENGTH 20
 #define INPUT_LENGTH 1
 #define MENU_OPTIONS 5
+#define SHORT_SLEEP 100000
+#define LONG_SLEEP 200000
 
 #include <stdio.h>
 #include <stdlib.h>

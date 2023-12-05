@@ -16,7 +16,7 @@ int saveToFile(vregister* list) {
     if (vFile == NULL) { 
 
         printf("failed to open file\n");
-        usleep(200000);
+        usleep(LONG_SLEEP);
         
         return -1; 
     } 
@@ -68,7 +68,7 @@ int loadToRegister(vregister* list) {
     if (vFile == NULL) { 
 
         printf("File did not exist, creating a new register file\n");
-        usleep(200000);
+        usleep(LONG_SLEEP);
 
         createFile();
 

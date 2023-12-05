@@ -6,7 +6,7 @@ int main(){
     vregister reg;
 
     //initiering av array i struct
-    for(int i=0; i < 10; i++){
+    for(int i=0; i < ENTRIES_LENGTH; i++){
         reg.vehicleArr[i] = NULL;
     }
 
@@ -30,7 +30,7 @@ int main(){
                 //save and exit
                 saveToFile(&reg);
                 printf("Your register has been saved! Thank you for using our vehicle register!\n");
-                usleep(200000);
+                usleep(LONG_SLEEP);
                 exit(1);
                 break;
 
@@ -43,7 +43,7 @@ int main(){
                 //remove vehicle
                 input =  getNum(0, ENTRIES_LENGTH - 1); 
                 printf("\n");
-                 usleep(100000);
+                usleep(SHORT_SLEEP);
                 removeVehicle(&reg, input);
                 break;
 
@@ -57,7 +57,7 @@ int main(){
                 input =  getNum(0, ENTRIES_LENGTH -1); 
                 //Converts 
                 printf("\n");
-                 usleep(100000);
+                usleep(SHORT_SLEEP);
                 printVehicle(&reg, input, true);
                 break;
             
@@ -67,7 +67,7 @@ int main(){
             
             default:
                 printf("WARNING: Not a valid input!\n");
-                usleep(100000);
+                usleep(SHORT_SLEEP);
                 break;
                 
         }
