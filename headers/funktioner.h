@@ -6,7 +6,7 @@
 /*
     Adds vehicle to the vehicleArr[] in specified register if there is room
 */
-void addVehicle(vregister* reg);
+int addVehicle(vregister* reg);
 
 /*
     Removes vehicle on position pos from the vehicleArr[], also reshuffles the array

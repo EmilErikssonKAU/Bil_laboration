@@ -31,8 +31,24 @@ void reOrder(vregister* reg){
     }
 }
 
-void addVehicle(vregister* reg){
+int addVehicle(vregister* reg){
     //Find first empty spot in register
+<<<<<<< HEAD
+    // index will not reach -1
+    int i = -1;
+    for (int j = 0; j < ENTRIES_LENGTH; j++) {
+        // checks for empty space
+        if (reg -> vehicleArr[j] == NULL) {
+            i = j;
+            break;;
+        }
+
+        if (j == ENTRIES_LENGTH - 1) {
+            printf("Array is full!\n");
+            return -1;
+        }
+
+=======
     int i = 0;
     while(reg -> vehicleArr[i] != NULL) {
         i++;
@@ -40,8 +56,9 @@ void addVehicle(vregister* reg){
             printf("WARNING: Array is full!\n");
             return;
         }
+>>>>>>> f31739aa9d65528093dcf8e3367f4ea10e242c11
     }
-    // This loop does not end if all the spaces are filled up, need to fix this
+    
 
 
     //Unsure what this does, need to look this up to explain it
@@ -71,6 +88,12 @@ void addVehicle(vregister* reg){
     char temp[NAME_LENGTH];
     fgets(temp, NAME_LENGTH, stdin);
     vehi -> owner -> age = atoi(temp);
+
+    printf("%d", atoi(temp));
+
+    printf("\nIndex of your vehicle is %d\n", i);
+
+    return 0;
 
 }
 
