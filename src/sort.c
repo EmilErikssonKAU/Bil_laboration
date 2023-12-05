@@ -14,4 +14,5 @@ void sortBrand(vregister* reg){
             }
         }
     }
+    printf("Array was sorted successfully!\n");
 }

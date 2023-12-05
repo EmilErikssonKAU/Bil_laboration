@@ -88,6 +88,7 @@ void removeVehicle(vregister* reg, int pos){
     free(reg -> vehicleArr[pos] -> owner);
     free(reg -> vehicleArr[pos]);
     reg -> vehicleArr[pos] = NULL;
-
     reOrder(reg);
+
+    printf("Vehicle was successfully deleted!\n");
 }
