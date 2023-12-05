@@ -33,6 +33,7 @@ void reOrder(vregister* reg){
 
 int addVehicle(vregister* reg){
     //Find first empty spot in register
+<<<<<<< HEAD
     // index will not reach -1
     int i = -1;
     for (int j = 0; j < ENTRIES_LENGTH; j++) {
@@ -47,6 +48,15 @@ int addVehicle(vregister* reg){
             return -1;
         }
 
+=======
+    int i = 0;
+    while(reg -> vehicleArr[i] != NULL) {
+        i++;
+        if(i > ENTRIES_LENGTH -1 ){
+            printf("Array is full!");
+            return;
+        }
+>>>>>>> f31739aa9d65528093dcf8e3367f4ea10e242c11
     }
     
 
