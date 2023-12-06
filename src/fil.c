@@ -15,10 +15,10 @@ int saveToFile(vregister* list) {
 
     if (vFile == NULL) { 
 
-        printf("failed to open file\n");
+        printf("File does not exist, creating a new file!\n");
         
-        
-        return -1; 
+        createFile();
+         
     } 
     char intTemp[NAME_LENGTH];
     int i = 0;
@@ -40,16 +40,14 @@ int saveToFile(vregister* list) {
 
 
     for(int j = 0; j < ENTRIES_LENGTH; j++) {
-        if(list -> vehicleArr[i] == NULL)
-            continue;
 
-        if (list -> vehicleArr[j] -> owner) {
+        if (list -> vehicleArr[j] != NULL) {
 
-            free(list -> vehicleArr[j] -> owner);
+            if (list -> vehicleArr[j] -> owner != NULL) {
 
-        }
+                free(list -> vehicleArr[j] -> owner);
 
-        if (list -> vehicleArr[j]) {
+            }
 
             free(list -> vehicleArr[j]);
 
