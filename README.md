@@ -16,6 +16,6 @@ This program must be created and run in a linux enviornment, otherwise the makef
 
 2. Run the program.
    ```bash
-   ./run.sh
+   ./Bil-Register
    ```
 
