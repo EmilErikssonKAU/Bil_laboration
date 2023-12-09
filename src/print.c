@@ -2,36 +2,41 @@
 
 void printMenu(){
     printf("\n1. Add Vehicle\n");
+     impSleep(SHORT_SLEEP);
     printf("2. Remove Vehicle\n");
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("3. Sort by brand\n");
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("4. Show Vehicle information\n");
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("5. Show Registry\n");
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("0. Quit\n\n");
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
 
 }
 
 void* eatChars() {
-    char c;
+    //Keep reading characters until killed   
+    char c [NAME_LENGTH];
     while (true)
-        c = getchar();
-    // Keep reading characters until killed   
+        fgets(c, NAME_LENGTH, stdin);
 }
 
-void impsleep(int time){
+void impSleep(int time){
+    //Function creating thread that reads from stdin while main thread sleeps
     pthread_t junkInput_th;
-
     pthread_create(&junkInput_th, NULL, eatChars, NULL);
+
     usleep(time);
+
     pthread_cancel(junkInput_th);
+    pthread_detach(junkInput_th);   //Releases allocated resources to system
 }
 
-//removes the newline at the end and ends char* with a '\0' if not already
+
 void removeNL(char *str, int len){
+    //removes the newline at the end and ends char* with a '\0' if not already
     int i = 0;
     while (*str != '\0') {
         i++;
@@ -49,6 +54,7 @@ void removeNL(char *str, int len){
 }
 
 bool checkInt(char *str, int len){
+    //check if string contains a valid integer
     int i = 0;
     while(true){
         if(str[i] == '\0' || str[i] == '\n'){
@@ -62,21 +68,22 @@ bool checkInt(char *str, int len){
 }
 
 int getNum(int lowest, int highest){
+    //read a number between lowest and highest
     char input[NAME_LENGTH];
     int input_int = -1;
     bool repeated = false;
 
     do{
         if(repeated){
-            printf("WARNING: Number not in range!\n");
-            impsleep(LONG_SLEEP);
+            printf(RED "WARNING: Number not in range!\n" RESET);
+            impSleep(LONG_SLEEP);
         }
         printf("Enter a number between %d and %d: ", lowest, highest);
-        impsleep(LONG_SLEEP);
+        impSleep(LONG_SLEEP);
         fgets(input, NAME_LENGTH, stdin);
         if(!checkInt(input, NAME_LENGTH)){
-            printf("WARNING: Faulty input!\n");
-            impsleep(LONG_SLEEP);
+            printf(RED "WARNING: Faulty input!\n" RESET);
+            impSleep(LONG_SLEEP);
             repeated = false;
             continue;
         }
@@ -90,43 +97,47 @@ int getNum(int lowest, int highest){
 
 
 void printVehicle(vregister* reg, int pos, bool ownerFlag){
+    //print information about vehicle, also of owner if ownerFlag == true
 
     if((reg -> vehicleArr[pos] ) == NULL){
-        printf("WARNING: No vehicle exists at that position!\n");
-        impsleep(LONG_SLEEP);
+        printf(RED "WARNING: No vehicle exists at that position!\n" RESET);
+        impSleep(LONG_SLEEP);
         return; 
     }
     vehicles* vehi = reg -> vehicleArr[pos];
+
     //Vehicle information
     printf("VEHICLE INFORMATION:\n");
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("Type: %s\n", vehi -> type);
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("Brand: %s\n", vehi -> brand);
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("Plate: %s\n", vehi -> plate);
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
 
     //Test of owner info flag
     if(ownerFlag == false) { return; }
 
     //Owner information
     printf("OWNER INFORMATION:\n");
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("Name: %s\n", vehi -> owner -> name);
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
     printf("Age: %d\n", vehi -> owner -> age);
-     impsleep(SHORT_SLEEP);
+     impSleep(SHORT_SLEEP);
 }
 
 void printVehicles(vregister* reg){
+    //print information about all vehicles in register
+    
     int i = 0;
     while(reg -> vehicleArr[i] != NULL){
         printf("%d:\n", i);
-         impsleep(SHORT_SLEEP);
+        impSleep(SHORT_SLEEP);
         printVehicle(reg, i, false);
         printf("\n");
-         impsleep(SHORT_SLEEP);
+        impSleep(SHORT_SLEEP);
         i++;
 
         //Array printed

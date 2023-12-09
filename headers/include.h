@@ -8,6 +8,10 @@
 #define SHORT_SLEEP 100000
 #define LONG_SLEEP 200000
 
+#define RESET   "\x1B[0m"
+#define RED     "\x1B[31m"
+#define GREEN   "\x1B[32m"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

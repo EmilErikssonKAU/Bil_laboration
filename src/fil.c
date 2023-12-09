@@ -1,6 +1,7 @@
 #include "../headers/include.h"
 
 int createFile() {
+    //Creates a new txt file
 
     FILE *vFile = fopen(RELATIVE_PATH, "w");
 
@@ -11,12 +12,13 @@ int createFile() {
 }
 
 int saveToFile(vregister* list) {
+    //Saves register to the file ../register.txt
     FILE *vFile = fopen(RELATIVE_PATH, "w");
 
     if (vFile == NULL) { 
 
-        printf("failed to open file\n");
-        impsleep(LONG_SLEEP);
+        printf(RED "WARNING: Failed to open file\n" RESET);
+        impSleep(LONG_SLEEP);
         
         return -1; 
     } 
@@ -62,13 +64,14 @@ int saveToFile(vregister* list) {
 }
 
 int loadToRegister(vregister* list) {
+    //Loads contents of ../register.txt to the register
 
     FILE *vFile = fopen(RELATIVE_PATH, "r");
 
     if (vFile == NULL) { 
 
-        printf("File did not exist, creating a new register file\n");
-        impsleep(LONG_SLEEP);
+        printf(RED "WARNING: File did not exist, creating a new register file\n" RESET);
+        impSleep(LONG_SLEEP);
 
         createFile();
 

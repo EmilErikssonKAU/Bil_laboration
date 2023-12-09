@@ -49,12 +49,24 @@ void sortBrand(vregister* reg);
 */
 void swap(vregister* reg, int pos_1, int pos_2);
 
+/*
+    Get number between lowest and highets from stdin
+*/
 int getNum(int lowest, int highest);
 
+/*
+    Continously reads from stdin
+*/
 void* eatChars();
 
-void impsleep(int time);
+/*
+    Sleep that reads stdin in separate thread
+*/
+void impSleep(int time);
 
+/*
+    Checks if given string contains valid integer
+*/
 bool checkInt(char *str, int len);
 
 

@@ -10,6 +10,7 @@ int main(){
         reg.vehicleArr[i] = NULL;
     }
 
+    //loads vehicle register from ../register.txt
     loadToRegister(&reg);
 
     //main loop
@@ -30,8 +31,8 @@ int main(){
             case 0:
                 //save and exit
                 saveToFile(&reg);
-                printf("Your register has been saved! Thank you for using our vehicle register!\n");
-                impsleep(LONG_SLEEP);
+                printf(GREEN "Your register has been saved! Thank you for using our vehicle register!\n" RESET);
+                impSleep(LONG_SLEEP);
                 exit(1);
                 break;
 
@@ -44,7 +45,7 @@ int main(){
                 //remove vehicle
                 input =  getNum(0, ENTRIES_LENGTH - 1); 
                 printf("\n");
-                impsleep(SHORT_SLEEP);
+                impSleep(SHORT_SLEEP);
                 removeVehicle(&reg, input);
                 break;
 
@@ -54,21 +55,23 @@ int main(){
                 break;
             
             case 4:
-                //print information about vehicle
+                //print information about vehicle and owner at location
                 input =  getNum(0, ENTRIES_LENGTH -1); 
-                //Converts 
                 printf("\n");
-                impsleep(SHORT_SLEEP);
+                impSleep(SHORT_SLEEP);
                 printVehicle(&reg, input, true);
+
                 break;
             
             case 5:
+                //prints information about all vehicles in register
                 printVehicles(&reg);
+
                 break;
             
             default:
-                printf("WARNING: Not a valid input!\n");
-                impsleep(SHORT_SLEEP);
+                printf(RED "WARNING: Not a valid input!\n" RESET);
+                impSleep(SHORT_SLEEP);
                 break;
                 
         }

@@ -14,6 +14,6 @@ void sortBrand(vregister* reg){
             }
         }
     }
-    printf("Array was sorted successfully!\n");
-    impsleep(LONG_SLEEP);
+    printf(GREEN "Array was sorted successfully!\n" RESET);
+    impSleep(LONG_SLEEP);
 }
