@@ -51,7 +51,9 @@ void swap(vregister* reg, int pos_1, int pos_2);
 
 int getNum(int lowest, int highest);
 
-void flushStdin();
+void* eatChars();
+
+void impsleep(int time);
 
 bool checkInt(char *str, int len);
 
