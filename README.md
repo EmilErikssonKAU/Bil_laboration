@@ -1,26 +1,13 @@
 # Vehicleregister
 A program implementing a vehicle registers of up to 10 vehicles and owners, the program allows the user to sort, search and print the contents of the register, as well as saving it to a file.
 
-# TO DO
+## Creators
 
-## ESSENTIAL
+- Emil Eriksson
+- Oskar Elliot Alfredsson
 
-- Handling user entering more than one number
-- Checks for correct input, when assigning age to owner
-- Thorough debugging
-- Check for memory leaks with valgrind
-- Update user interface
-- Rewrite code to more compact form
+## How to use
+This program must be created and run in a linux enviornment, otherwise the makefile will not work and the inclusion of libraries <pthread.h> and <unistd.h> will generate errors
 
-## NON-ESSENTIAL
-
-- Commenting
-- Restructuring of file contents
-- Checking validity of vehicle numberplate
-
-## VERY-NON-ESSENTIAL
-
-- Allowing user to choose savefile
-- Allowing user to choose language
-- Keeping register of owners, allowing one owner to own several vehicles
-- Implement GUI library
+> make
+> ./BilRegister
