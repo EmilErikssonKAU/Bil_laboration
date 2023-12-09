@@ -1,9 +1,9 @@
 #include "../headers/include.h"
 
-//Bubblesort algoritm
+
 void sortBrand(vregister* reg){
-    //shuffle NULL pointers to the back
-    reOrder(reg);
+    //Bubblesort algorithm
+    reOrder(reg);   //shuffle NULL pointers to the back
     for (int i = 0; i < ENTRIES_LENGTH- 1; ++i) {
         for (int j = 0; j < ENTRIES_LENGTH - i - 1; ++j) {  
             if(reg -> vehicleArr[j] == NULL || reg -> vehicleArr[j+1] == NULL)

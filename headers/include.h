@@ -8,9 +8,9 @@
 #define SHORT_SLEEP 100000
 #define LONG_SLEEP 200000
 
-#define RESET   "\x1B[0m"
-#define RED     "\x1B[31m"
-#define GREEN   "\x1B[32m"
+#define RESET   "\x1B[0m"   //ansii codes
+#define RED     "\x1B[31m"  //
+#define GREEN   "\x1B[32m"  //
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +18,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
-#include <unistd.h>         //For the LINUX edition of Vehicle Reg
+#include <unistd.h>         //for the LINUX edition of Vehicle Reg
 #include <pthread.h>        //              
 
 #include "structs.h"
