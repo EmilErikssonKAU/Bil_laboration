@@ -1,3 +1,6 @@
+#EMIL ERIKSSON
+#OSKAR E ALFREDSSON
+
 CC = gcc
 
 NAME = Bil-Register

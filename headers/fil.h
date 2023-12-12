@@ -1,3 +1,6 @@
+//EMIL ERIKSSON
+//OSKAR E ALFREDSSON
+
 /*
     This is a separete file because of the project instructions
 */

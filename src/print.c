@@ -1,3 +1,6 @@
+//EMIL ERIKSSON
+//OSKAR E ALFREDSSON
+
 #include "../headers/include.h"
 
 void printMenu(){

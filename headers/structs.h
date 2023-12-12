@@ -1,3 +1,6 @@
+//EMIL ERIKSSON
+//OSKAR E ALFREDSSON
+
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
