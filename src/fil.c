@@ -17,8 +17,10 @@ int saveToFile(vregister* list) {
 
     if (vFile == NULL) { 
 
-        printf(RED "WARNING: Failed to open file\n" RESET);
+        printf(RED "WARNING: File did not exist, creating a new register file\n" RESET);
         impSleep(LONG_SLEEP);
+
+        createFile();
         
         return -1; 
     } 

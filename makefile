@@ -11,9 +11,9 @@ SRCFILES = $(wildcard $(SRC)/*.c)
 OBJFILES = $(patsubst $(SRC)/%.c, $(BUILD)/%.o, $(SRCFILES))
 
 # Skapar nyckelord så att make inte tror att dessa namn är filer
-.PHONY: build dirs clean
+.PHONY: build dirs clean memCheck
 
-build: $(OBJFILES)
+build: $(OBJFILES) 
 	@echo "Skapar $(NAME)"
 	@$(CC) $(FLAGS) $^ -o $(NAME)
 	@echo "Klart!"
@@ -26,8 +26,9 @@ dirs:
 	@mkdir -p $(BUILD)
 
 memCheck:
-	-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(NAME)
+	-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=log.txt ./$(NAME)
 
 # Rensar upp filer när de inte längre behövs
 clean:
-	rm -f $(OBJFILES) $(NAME)
+	@rm -f $(OBJFILES) $(NAME)
+	@rmdir $(BUILD)
