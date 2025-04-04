@@ -3,11 +3,11 @@ A program implementing a vehicle registers of up to 10 vehicles and owners, the 
 
 ## Creators
 
-- Emil Eriksson
+- Emil Jonas Eriksson
 - Oskar Elliot Alfredsson
 
 ## How to use
-This program must be created and run in a linux enviornment, otherwise the makefile will not work and the inclusion of libraries <pthread.h> and <unistd.h> will generate errors
+This program should be created and run in a linux enviornment, otherwise the makefile will not work and the inclusion of libraries <pthread.h> and <unistd.h> will generate errors
 
 1. Use the makefile to build the program.
    ```bash
@@ -19,3 +19,4 @@ This program must be created and run in a linux enviornment, otherwise the makef
    ./Bil-Register
    ```
 
+## To do
